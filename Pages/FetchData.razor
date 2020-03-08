@@ -1,0 +1,46 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<h1>Npc</h1>
+
+<p>This are a collection of the npc in the parania red edition.</p>
+
+@if (NPCs == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Decription</th>
+                <th>Image</th>
+                <th>Moxie</th>
+                <th>TreasonStars</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var npc in NPCs)
+            {
+            <tr>
+                <td>@npc.Name-@npc.Clearance-@npc.Zone-@npc.CloneNumber</td>
+                <td>@npc.Decription</td>
+                <td>@npc.Image</td>
+                <td>@npc.Moxie</td>
+                <td>@npc.TreasonStars</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private NPC[] NPCs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        NPCs = await Http.GetJsonAsync<NPC[]>("sample-data/NPC.json");
+    }
+}

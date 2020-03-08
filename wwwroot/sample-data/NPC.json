@@ -1,0 +1,24 @@
+﻿[
+  {
+    "Id": 0,
+    "Name": "Bob",
+    "Clearance": "Red",
+    "CloneNumber": 3,
+    "Decription": "Decription",
+    "Zone": "AAB",
+    "Image": "Image",
+    "Moxie": 3,
+    "TreasonStars": 2
+  },
+  {
+    "Id": 1,
+    "Name": "Julia",
+    "Clearance": "Blue",
+    "CloneNumber": 3,
+    "Decription": "Decription",
+    "Zone": "HGB",
+    "Image": "Image",
+    "Moxie": 1,
+    "TreasonStars": 3
+  }
+]
